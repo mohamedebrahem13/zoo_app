@@ -1,11 +1,8 @@
 <resources>
     <string name="app_name">ZOO</string>
-    <string name="click">click</string>
-    <string name="button2">click2</string>
-    <string name="lion2">lion</string>
-    <string name="monkey">monkey</string>
-    <string name="type_animal_name_here">type animal name here</string>
     <string name="newactivity2">Button</string>
+    <string name="MONKEY">MONKEY</string>
     <string name="elephant">elephant</string>
+
 
 </resources>

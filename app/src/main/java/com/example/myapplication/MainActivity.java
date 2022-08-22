@@ -1,32 +1,44 @@
 package com.example.myapplication;
 
 import android.media.MediaPlayer;
-
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
+
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
+import java.util.ArrayList;
 
-import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity {
-ImageView img;
-Button button ,button2;
-EditText Animal;
-String Animalia;
+
 MediaPlayer media;
+ImageView imageplay,imagStop;
+Animallist animallist = (Animallist) this.getApplication();
+ArrayList<Animal>  animal;
+AnimalAdapter adapter;
+    ViewHolder holder;
+RecyclerView recyclerView;
+
+
+
+
 
     private final MediaPlayer.OnCompletionListener mCompletionListener = mediaPlayer -> {
         // Now that the sound file has finished playing, release the media player resources.
         releaseMediaPlayer();
-    };
+        imagStop.setVisibility(View.INVISIBLE);
+        imageplay.setVisibility(View.VISIBLE);
 
+
+    };
 
 
 
@@ -34,33 +46,68 @@ MediaPlayer media;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        img=findViewById(R.id.img);
-        Animal =findViewById(R.id.editTextTextPersonName);
-        button=findViewById(R.id.button);
-        button2=findViewById(R.id.button2);
-
-
-
-        button.setOnClickListener(view -> display(Animalia = Animal.getText().toString()));
-
+        animal= Animallist.getAnimallist();
+        setRecyclerview();
+        setadpterwithlistener();
     }
 
 
 
 
 
+    private void setadpterwithlistener(){
+
+        adapter.setOnItemClickListener(new AnimalAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position, View view) {
+                releaseMediaPlayer();
+                Animal animal_postion= animal.get(position);
+                media = MediaPlayer.create(MainActivity.this, animal_postion.getmAudioResourceId());
+                media.start();
+                media.setOnCompletionListener(mCompletionListener);
+
+            }
+
+
+            @Override
+            public void onItemClickpouse(int position) {
+                 holder= recyclerView.findViewHolderForAdapterPosition(position);
+                imagStop= holder.itemView.findViewById(R.id.imagestop);
+                imageplay= holder.itemView.findViewById(R.id.imageplay);
+                releaseMediaPlayer();
+            }
+
+
+        });
+
+    }
+
+
+    private void setRecyclerview(){
+    recyclerView = findViewById(R.id.recyclerView);
+    recyclerView.setHasFixedSize(true);
+    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+    recyclerView.setLayoutManager(layoutManager);
+    adapter = new AnimalAdapter(animal, getApplicationContext());
+    recyclerView.setAdapter(adapter);
+
+}
+
+
     private void releaseMediaPlayer() {
         // If the media player is not null, then it may be currently playing a sound.
-        if (media != null) {
-            // Regardless of the current state of the media player, release its resources
-            // because we no longer need it.
+        if (media != null ) {
+            imagStop.setVisibility(View.INVISIBLE);
+            imageplay.setVisibility(View.VISIBLE);
             media.release();
-
             // Set the media player back to null. For our code, we've decided that
             // setting the media player to null is an easy way to tell that the media player
             // is not configured to play an audio file at the moment.
             media = null;
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
         }
+
     }
 
 
@@ -70,39 +117,9 @@ MediaPlayer media;
         releaseMediaPlayer();
     }
 
-    public void display (String animal){
-        switch(animal.toLowerCase(Locale.ROOT)){
-            case "lion":
-                releaseMediaPlayer();
-                    img.setImageResource(R.drawable.lion);
-                    Toast.makeText(MainActivity.this, R.string.lion2 ,Toast.LENGTH_SHORT).show();
-                    media= MediaPlayer.create(this, R.raw.lion);
-                media.start();
-                media.setOnCompletionListener(mCompletionListener);
-                break;
-            case "monkey":
-                releaseMediaPlayer();
-                img.setImageResource(R.drawable.moncky);
-                    Toast.makeText(MainActivity.this, R.string.monkey,Toast.LENGTH_SHORT).show();
-                    media= MediaPlayer.create(this, R.raw.monkey2);
-                    media.start();
-                media.setOnCompletionListener(mCompletionListener);
-
-                break;
-            case "elephant":
-                releaseMediaPlayer();
-                img.setImageResource(R.drawable.elphant);
-                    Toast.makeText(MainActivity.this, R.string.elephant,Toast.LENGTH_SHORT).show();
-                    media= MediaPlayer.create(this, R.raw.elephant);
-                    media.start();
-                media.setOnCompletionListener(mCompletionListener);
-                break;
-            default:Toast.makeText(MainActivity.this,"please write animal name correct",Toast.LENGTH_SHORT).show();
-                break;
 
 
 
-        }
 
-    }
+
 }
