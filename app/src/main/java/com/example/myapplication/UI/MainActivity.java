@@ -1,127 +1,71 @@
 package com.example.myapplication.UI;
 
-
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
-import com.example.myapplication.Adapter.AnimalAdapter;
+
+import androidx.viewpager2.widget.ViewPager2;
+
+
+import com.example.myapplication.Adapter.viewpageradapter;
 import com.example.myapplication.R;
-import com.example.myapplication.data.Animal;
-import com.example.myapplication.data.Animallist;
-
-import java.util.ArrayList;
-import java.util.Objects;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 
 public class MainActivity extends AppCompatActivity {
+    private String[]FragmentsName={"ANIMALS","ALPHABET","BLANK","BLANK2"};
 
-MediaPlayer media;
-ImageView imageplay;
-Animallist animallist = (Animallist) this.getApplication();
-ArrayList<Animal>  animal;
-AnimalAdapter adapter;
-    ViewHolder holder;
-RecyclerView recyclerView;
+viewpageradapter viewpageradapter;
+    TabLayout tabLayout;
 
-
-
-
-
-    private final MediaPlayer.OnCompletionListener mCompletionListener = mediaPlayer -> {
-        // Now that the sound file has finished playing, release the media player resources.
-        releaseMediaPlayer();
-        if(imageplay !=null){
-         imageplay.setImageResource(R.drawable.baseline_play_arrow_white_48);
-    }
-
-
-    };
-
-
-
+    ViewPager2 viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        animal= animallist.getAnimallist();
-        setRecyclerview();
-        setadpterwithlistener();
-    }
+        viewPager = findViewById(R.id.viewpager);
+        tabLayout=findViewById(R.id.taplayout);
 
-
-
-
-
-    private void setadpterwithlistener(){
-
-        adapter.setOnItemClickListener(new AnimalAdapter.OnItemClickListener() {
+        viewpageradapter=new viewpageradapter(getSupportFragmentManager(),getLifecycle());
+        viewPager.setAdapter(viewpageradapter);
+        new TabLayoutMediator(tabLayout, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
-            public void onItemClick(int position) {
-                holder= recyclerView.findViewHolderForAdapterPosition(position);
-                imageplay= Objects.requireNonNull(holder).itemView.findViewById(R.id.imageplay);
-                Animal animal_postion= animal.get(position);
-                if(media!=null){
-                    media.release();
-                    media = null;
-                    imageplay.setImageResource(R.drawable.baseline_play_arrow_white_48);
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                tab.setText(FragmentsName[position]);
 
-                }else{
-                    releaseMediaPlayer();
-                    media = MediaPlayer.create(MainActivity.this, animal_postion.getmAudioResourceId());
-                    media.start();
-                    imageplay.setImageResource(R.drawable.baseline_stop_white_48);
-                    media.setOnCompletionListener(mCompletionListener);
 
-                }
+            }
+        }).attach();
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
 
             }
 
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
         });
 
-    }
 
 
-    private void setRecyclerview(){
-    recyclerView = findViewById(R.id.recyclerView);
-    recyclerView.setHasFixedSize(true);
-    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-    recyclerView.setLayoutManager(layoutManager);
-    adapter = new AnimalAdapter(animal, getApplicationContext());
-    recyclerView.setAdapter(adapter);
-
-}
-
-
-    private void releaseMediaPlayer() {
-        // If the media player is not null, then it may be currently playing a sound.
-        if (media != null ) {
-            media.release();
-            // Set the media player back to null. For our code, we've decided that
-            // setting the media player to null is an easy way to tell that the media player
-            // is not configured to play an audio file at the moment.
-            media = null;
-            // Regardless of the current state of the media player, release its resources
-            // because we no longer need it.
-        }
 
 
     }
 
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
+
     }
 
 
 
-
-
-
-}

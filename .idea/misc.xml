@@ -7,11 +7,18 @@
         <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/baseline_play_arrow_24.xml" value="0.151" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/baseline_stop_24.xml" value="0.2655" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2785" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/textbackground.xml" value="0.158" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout-v28/recyclerlayout.xml" value="0.19655797101449277" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_alphapet.xml" value="0.1897644927536232" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_animaldetails.xml" value="0.22" />
-        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main2.xml" value="0.35572916666666665" />
-        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/details.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/alphabeta_adapter_layout.xml" value="0.1" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/details.xml" value="0.1" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_alphpet.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_animal.xml" value="0.3283514492753623" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_blank.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_blank2.xml" value="0.1897644927536232" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/layout.xml" value="0.3416666666666667" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/recyclerlayout.xml" value="0.26458333333333334" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/MyApplication/app/src/main/res/layout/splachscreen.xml" value="0.29438405797101447" />

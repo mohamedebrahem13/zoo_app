@@ -12,7 +12,7 @@
         app:cardElevation="5dp"
         app:cardCornerRadius="8dp"
         android:layout_margin="5dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="#FFC107"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
@@ -35,16 +35,6 @@
             android:visibility="visible"
             tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="4dp"
-            android:padding="6dp"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
 
 
 

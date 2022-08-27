@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:src="@drawable/zoo2"
+        android:src="@drawable/splachbackground"
         android:scaleType="centerCrop"
         tools:ignore="MissingConstraints" />
 

@@ -61,18 +61,15 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
         }else {
             holder.img.setVisibility(View.GONE);
         }
-        holder.title.setText(animal.getAnimalname());
         holder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position=holder.getAdapterPosition();
                 Animal animal = AnimalList.get(position);
               int image=  animal.getmImageResourceId();
-              String name= animal.getAnimalname();
                 String details =animal.getDetails();
                 Intent intent=new Intent(v.getContext(), animaldetails.class);
                 intent.putExtra("animalimage", image);
-                intent.putExtra("animalname", name);
                 intent.putExtra("details", details);
 
                 v.getContext().startActivity(intent);
@@ -112,7 +109,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
     }
 
     public  class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView title;
+
         public ImageView img;
         public  ImageView imageplay;
 
@@ -120,7 +117,6 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
 
         public ViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
             img = itemView.findViewById(R.id.img);
             imageplay =itemView.findViewById(R.id.imageplay);
             imageplay.setImageResource(R.drawable.baseline_play_arrow_white_48);
