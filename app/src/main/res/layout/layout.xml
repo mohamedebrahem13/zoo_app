@@ -26,6 +26,7 @@
             tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
 
         <ImageView
+            android:tag="play"
             android:id="@+id/imageplay"
             android:layout_width="96dp"
             android:layout_height="83dp"

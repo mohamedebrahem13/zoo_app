@@ -13,11 +13,15 @@ import android.widget.GridView;
 
 import com.example.myapplication.Adapter.AlphabetAdapter;
 import com.example.myapplication.R;
+import com.example.myapplication.data.Animallist;
+
 
 
 public class alphabetFragment extends Fragment {
 Intent intent;
 AlphabetAdapter alphabetAdapter;
+    String[] alpha;
+
 
 
     public alphabetFragment() {
@@ -36,10 +40,8 @@ AlphabetAdapter alphabetAdapter;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_alphpet, container, false);
-        String[] alpha=new String[26];
-        for (int i=0,j=65;i<26;i++,j++){
-            alpha[i]=Character.toString((char) j);
-        }
+        Animallist alphabetlist = (Animallist) requireActivity().getApplication();
+        alpha=alphabetlist.getAlpha();
         GridView gv =v.findViewById(R.id.grid);
         alphabetAdapter=new AlphabetAdapter(getContext(),alpha);
 

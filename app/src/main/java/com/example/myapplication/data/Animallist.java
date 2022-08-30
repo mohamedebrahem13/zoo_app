@@ -9,13 +9,29 @@ import java.util.Collections;
 
 public class Animallist extends Application {
    private static ArrayList<Animal>   animallist = new ArrayList<>();
+   private static String[] alpha=new String[26];
 
     public Animallist() {
+
         setanimallist();
+        setalphabetlist();
     }
 
     public static ArrayList<Animal> getAnimallist() {
         return animallist;
+    }
+
+
+    public static String[] getAlpha() {
+        return alpha;
+    }
+
+    private void setalphabetlist(){
+        for (int i=0,j=65;i<26;i++,j++){
+            alpha[i]=Character.toString((char) j);
+        }
+
+
     }
 
     private void setanimallist(){
