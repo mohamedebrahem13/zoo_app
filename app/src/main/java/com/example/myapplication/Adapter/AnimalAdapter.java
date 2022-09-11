@@ -14,22 +14,28 @@ import androidx.annotation.NonNull;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.data.Animal;
 import com.example.myapplication.R;
+import com.example.myapplication.data.appcontext;
 
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder> {
-    private ArrayList<Animal> AnimalList;
+    private List<Animal> AnimalList;
 
     private OnItemClickListener mListener;
     int selectedPosition=-1;
 
 
+    public void setlist (List<Animal> animalmodels) {
+        this.AnimalList = animalmodels;
+        notifyDataSetChanged();
 
-    public AnimalAdapter(ArrayList<Animal> animalList, OnItemClickListener Listener) {
-        this.AnimalList = animalList;
+    }
+
+    public AnimalAdapter( OnItemClickListener Listener) {
         this.mListener=Listener;
     }
     @NonNull
@@ -43,7 +49,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Animal animal = AnimalList.get(position);
         if (animal.hasImage()) {
-            holder.img.setImageResource(animal.getmImageResourceId());
+            Glide.with(appcontext.getAppContext()).load(animal.getmImageResourceId()).into( holder.img);
             holder.img.setScaleType(ImageView.ScaleType.CENTER_CROP);
             holder.img.setVisibility(View.VISIBLE);
         }else {
@@ -60,7 +66,11 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return AnimalList.size();
+        if (AnimalList!=null){
+
+            return AnimalList.size();
+        }
+        return -1;
     }
 
 
@@ -68,6 +78,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
         private OnItemClickListener mListener;
         public ImageView img;
         public  ImageView imageplay;
+        public ImageView englishsound;
 
 
 
@@ -77,6 +88,9 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
             img = itemView.findViewById(R.id.img);
             imageplay =itemView.findViewById(R.id.imageplay);
             imageplay.setImageResource(R.drawable.baseline_play_arrow_white_48);
+            englishsound =itemView.findViewById(R.id.englishsound);
+            englishsound.setImageResource(R.drawable.baseline_play_arrow_white_48);
+            englishsound.setOnClickListener(this);
             img.setOnClickListener(this);
             imageplay.setOnClickListener(this);
 
@@ -97,6 +111,14 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
                     // notify
                     notifyDataSetChanged();
                     break;
+                case R.id.englishsound:
+                    int positions=getAdapterPosition();
+                    mListener.englishsound(positions,v);
+                    selectedPosition=positions;
+                    // notify
+                    notifyDataSetChanged();
+
+                    break;
                 default:
                     break;
             }
@@ -110,6 +132,8 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
     public  interface  OnItemClickListener {
         void onItemClick(int position);
         void onimageplayclick(int position,View view);
+        void englishsound(int position,View view);
+
 
 
     }

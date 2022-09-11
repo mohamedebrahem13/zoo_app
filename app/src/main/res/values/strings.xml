@@ -1,12 +1,37 @@
 <resources>
     <string name="app_name">ZOO</string>
-    <string name="newactivity2">Button</string>
-    <string name="MONKEY">MONKEY</string>
-    <string name="elephant">elephant</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="animal">animal</string>
-    <string name="alphapet">alphapet</string>
+    <string name="animal" translatable="false">animal</string>
+    <string name="alphapet" translatable="false">alphapet</string>
+    <string name="monkey">"Most monkeys live in tropical forests, in Asia, Central and South America, or in savannahs in Africa, and monkeys have been found in the world in two main regions, so scientists classified monkeys into: Old World monkeys, which are found in the continent of Asia and Africa, and include: gignon, mugabi, mac, baboons, and colobus. New World monkeys are found in Mexico, Central America and South America and include woolen monkeys, spider monkeys, Capuchin monkeys, howling monkeys and squirrels</string>
+    <string name="lion">The weight of young lions and the weight of newborn cubs ranges from 1 kg - 2 kg and cubs are characterized by their yellowish-red fur that contains spots that gradually disappear with age, and the shape of the cub is similar to pet domestic cats, while the duration of pregnancy of the lioness is three and a half months after which she gives birth to a number ranging from a cub to six cubs, and the period between loads ranges from twenty to thirty months, knowing that the cub is able to see eleven days after birth, and it also becomes able to On walking after the fifteenth day</string>
+    <string name="elephant">Asian elephants can tear down trees or pick up a blade of grass with their trunks.\n\n" +
+                "Elephants have the largest brain of any land mammal. In fact, of all land mammals, they have greatest volume of cerebral cortex available for cognitive processing.\n\n" +
+                "An elephant’s trunk has more than 40,000 muscles, more than all the muscles in a human body! Asian elephants have a gestation period of almost 22 months—the longest of any animal. Calves often nurse for two to four years.</string>
+    <string name="whale">The Blue Whale is the largest animal ever to have lived on earth \"Despite being so massive, this giant of the ocean feeds on some of the smallest marine life – tiny shrimp like animals called krill. A single adult blue whale can consume 36,000 kg of krill a day.\"Incredibly, Blue Whales are graceful swimmers cruise the ocean at over 8km/h, and can reach speeds of over 30km/h.</string>
+    <string-array name="taps">
+        <item>Sound</item>
+        <item>ALPHAPET</item>
+        <item>BLANK</item>
+        <item>BLANK2</item>
+    </string-array>
+
+    <string-array name="tapsarabic">
+        <item>أصوات</item>
+        <item>أحرف</item>
+        <item>فارغ</item>
+        <item>فارغ</item>
+    </string-array>
+
+    <string name="camal">Camels live in deserts, where it is hot and dry. Camels have adapted and found ways to help them survive in deserts. They have a thick coat of hair that protects them from the heat in the day, and keeps them warm at night. Their large feet spreads their weight on the sand when they are walking. When there is food and water, a camel can eat and drink large amounts of it and store it as fat in the hump. Then, when there is no food or water</string>
+    <string name="panda">Pandas have carnivorous teeth, but they eat bamboo and fruit
+ "Giant pandas are good tree climbers. They can climb trees from 7 months old, they are bears, and like other bears, they can swim. "Pandas are born looking like baby badgers — fur-less, pink, and blind. The iconic black and white colour comes later, after about three weeks."Not all giant pandas are black and white! A few are brown and white, but these are very rare.</string>
+    <string name="turtle">There are over 356 different species of turtles and tortoises. Turtles in particular (as opposed to tortoises) are aquatic reptiles with webbed feet and hard shells. Their jaws are equipped with hard beaks that help them capture and cut apart food. Some species of turtles have eyes and nostrils situated on the tops of their heads, so that they can hide easily in shallow water.</string>
+    <string name="snake">About once a month snakes shed their skin, a process called ecdysis that makes room for growth and gets rid of parasites. They rub against a tree branch or other object, then slither out of their skin head first, leaving it discarded inside-out. Most snakes lay eggs, but some species—like sea snakes—give live birth to young. Very few snakes pay any attention to their eggs, with the exception of pythons, which incubate their eggs.</string>
+    <string name="frog">Many species of frog care for their offspring. For example some poison dart frogs lay their eggs on the forest floor so they can guard them and urinate on them to keep them moist. Females of some frog species keep a regular check on their offspring (tadpoles) and if food becomes scarce she will deposit unfertilised eggs for them to eat. Asian tree frogs build nests in trees above water so that when the tadpoles hatch they fall directly into the water.</string>
+    <string name="dog">Dogs have four legs and make a \"bark,\" \"woof,\" or \"arf\" sound. Dogs often chase cats, and most dogs will fetch a ball or stick. Dogs can smell and hear better than humans, but cannot see well in color. Due to the structure of the eye, dogs can see better in dim light than humans. They can also see further around before moving their eyes than a human can. Like wolves, wild dogs travel in groups called packs.</string>
+    <string name="goat">"The mountain goat wanders the mountains alone, and meets only to mate. It eats grasses, lichens, and leaves. It is 3–4 ft. at the shoulder (90–120 centimeters.) The mother mountain goat is called a nanny, and the male is called a billy, the baby is called a kid. Their thick undercoat, and long white overcoat, protects them from blustery wind, and harsh weather that often occurs in their mountainous habitat. Both male and female have short, strong, legs that have large black hooves on the end. "</string>
+    <string name="croco">Crocodiles live in rivers, lakes, and dams in parts of America, Asia, Africa, and Australia. Some of the crocodiles from Australia live in salt water. These saltwater crocodiles are normally bigger than the ones that live in fresh water. While crocodiles spend most of their time in the water, they can come out and move around on the land. Crocodiles cannot breathe underwater: they breathe air, just like people. They can hold their breath for a maximum of about two hours underwater. Some people feel threatened by crocodiles because they can be violent. However, some people find them fascinating.</string>
+    <string name="hibbo">The river is a semi-aquatic animal that inhabits lakes and rivers in sub-Saharan Africa and has previously stretched across the Nile Valley to Palestine and Jordan to the north. Hippos live in groups of about 40 heads, and they stay most of the day in water or mud until they cool. Mating and birth take place in the water where regional males fight with each other to control a small area of the river, and hippos go out at dusk to graze grasses and grazing is an individual activity carried out by each individual alone.</string>
 
 
 </resources>

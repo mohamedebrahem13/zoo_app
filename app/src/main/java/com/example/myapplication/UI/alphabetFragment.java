@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +16,18 @@ import android.widget.GridView;
 
 import com.example.myapplication.Adapter.AlphabetAdapter;
 import com.example.myapplication.R;
-import com.example.myapplication.data.Animallist;
+import com.example.myapplication.UI.Viewmodel.AlphaViewmodel;
 
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class alphabetFragment extends Fragment {
 Intent intent;
 AlphabetAdapter alphabetAdapter;
-    String[] alpha;
+    List<String> alpha;
+    AlphaViewmodel alphaViewmodel;
 
 
 
@@ -33,6 +40,7 @@ AlphabetAdapter alphabetAdapter;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
     }
 
     @Override
@@ -40,17 +48,25 @@ AlphabetAdapter alphabetAdapter;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_alphpet, container, false);
-        Animallist alphabetlist = (Animallist) requireActivity().getApplication();
-        alpha=alphabetlist.getAlpha();
+       alphaViewmodel= ViewModelProviders.of(this).get(AlphaViewmodel.class);
         GridView gv =v.findViewById(R.id.grid);
-        alphabetAdapter=new AlphabetAdapter(getContext(),alpha);
-
+        alphabetAdapter=new AlphabetAdapter(getContext());
         gv.setAdapter(alphabetAdapter);
+
+
+        alphaViewmodel.getalphamutablelivedata().observe(getViewLifecycleOwner(), new Observer<List<String>>() {
+            @Override
+            public void onChanged(List<String> strings) {
+              alphabetAdapter.setlist(strings);
+               alpha=new ArrayList<>(strings);
+         }
+        });
+
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 intent=new Intent(getContext(), alphabet_activity.class);
-                intent.putExtra("char", alpha[position]);
+                intent.putExtra("char", alpha.get(position));
                 startActivity(intent);
             }
         });

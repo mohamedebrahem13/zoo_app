@@ -29,7 +29,6 @@ Bundle bundle;
             animal.setImageResource(resimage);
 
 
-
         }
 
 

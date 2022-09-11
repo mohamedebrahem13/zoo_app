@@ -5,6 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/constraintlayout"
+    android:background="#F47236"
     tools:context=".UI.alphabet_activity">
 
     <ImageView
@@ -12,14 +14,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="4dp"
-        android:scaleType="centerInside"
+        android:scaleType="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck,ImageContrastCheck"
+        tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="TODO" />
+       />
+
+    <ImageView
+        android:id="@+id/imageplay"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="344dp"
+        android:background="@color/purple_200"
+        android:scaleType="center"
+        android:src="@drawable/baseline_play_arrow_white_48"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck,MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/englishsound"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="76dp"
+        android:background="@color/purple_200"
+        android:scaleType="center"
+        android:src="@drawable/baseline_play_arrow_white_48"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck,MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

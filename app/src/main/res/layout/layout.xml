@@ -9,14 +9,16 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        app:cardCornerRadius="8dp"
-        android:layout_margin="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         app:cardBackgroundColor="#FFC107"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        >
+        app:cardUseCompatPadding="true">
 
         <ImageView
             android:id="@+id/img"
@@ -26,7 +28,6 @@
             tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
 
         <ImageView
-            android:tag="play"
             android:id="@+id/imageplay"
             android:layout_width="96dp"
             android:layout_height="83dp"
@@ -36,7 +37,15 @@
             android:visibility="visible"
             tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
 
-
+        <ImageView
+            android:id="@+id/englishsound"
+            android:layout_width="96dp"
+            android:layout_height="81dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="16dp"
+            android:padding="25dp"
+            android:visibility="visible"
+            tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
 
 
     </androidx.cardview.widget.CardView>

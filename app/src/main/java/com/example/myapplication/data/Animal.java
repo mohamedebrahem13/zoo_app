@@ -4,9 +4,18 @@ public class Animal {
 
     /** Audio resource ID for the word */
     private int mAudioResourceId;
+    private int arabicsound;
+    private String details ;
 
 
-    private String animalname;
+
+    public int getArabicsound() {
+        return arabicsound;
+    }
+
+    public void setArabicsound(int arabicsound) {
+        this.arabicsound = arabicsound;
+    }
 
     public String getDetails() {
         return details;
@@ -16,13 +25,10 @@ public class Animal {
         this.details = details;
     }
 
-    private String details ;
-    public String getAnimalname() {
-        return animalname;
-    }
+
 
     /** Image resource ID for the word */
-    private int mImageResourceId = NO_IMAGE_PROVIDED;
+    private int mImageResourceId;
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
@@ -41,10 +47,11 @@ public class Animal {
     }
 
 
-    public Animal(int mAudioResourceId, String animalname, int mImageResourceId,String details) {
+    public Animal(int mAudioResourceId, int mImageResourceId,String details,int arabicsound) {
+        setArabicsound(arabicsound);
+        setDetails(details);
         this.mAudioResourceId = mAudioResourceId;
-        this.animalname = animalname;
         this.mImageResourceId = mImageResourceId;
-        this.details=details;
+
     }
 }
